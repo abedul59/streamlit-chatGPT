@@ -1,6 +1,6 @@
 import streamlit as st
 from decouple import config
-import openai
+import openai, os
 
 response = False
 prompt_tokens = 0
@@ -8,7 +8,7 @@ completion_tokes = 0
 total_tokens_used = 0
 cost_of_response = 0
 
-API_KEY = config('OPENAI_API_KEY')
+API_KEY = os.getenv("OPENAI_API_KEY")
 openai.api_key = API_KEY
 
 
